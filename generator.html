@@ -2,7 +2,7 @@
 <html>
 <!--
 
-Copyright 2024 Carlos Henrique <ch.carlosh.enr.ique2.112@gmail.com>
+Copyright 2024 Carlos Henrique & Ravy Novais Sales <ch.carlosh.enr.ique2.112@gmail.com>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -26,39 +26,46 @@ Additional Rules:
 
 Please refer to the full Apache License, Version 2.0 for the complete set of terms and conditions.
 
--->                              
-<head>
+-->   
+<head>                          
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/keyring-icon.png"/>
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <title>Keyring Manager</title>
+    <title>Keyring Manager - Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div id="container">
-        <h1>Keyring Manager</h1>
-        <div id="buttons-container">
-            <button id="create-button">Create Keyring</button>
-            <button id="load-button">Load Keyring</button>
-            <button id="generator">Password Generator</button>
-            <script>
-                document.getElementById("generator").onclick = function() {
-                    window.location.href = "generator.html";
-                }
-            </script>
-        </div>
-        <div id="content-container" data-simplebar>
-          <!-- Data -->
-        </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
-    <script src="https://unpkg.com/simplebar@5.3.0/dist/simplebar.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
-    <script src="https://unpkg.com/simplebar@5.3.0/dist/simplebar.min.js"></script>
-    <script src="scripts/download.js"></script>
-    <script src="scripts/passwords.js"></script>
-    <script src="scripts/load.js"></script>
-    <script src="scripts/main.js"></script>
-</body>
+    <h2>Password Generator</h2>
+    <label for="length">Password Length:</label>
+    <input type="number" id="length" value="12" min="4" max="32">
+    <br><br>
+    <button onclick="generatePassword()">Generate Password</button>
+    <br><br>
+    <input type="text" id="password" readonly>
 
+    <script>
+        function generatePassword() {
+            const length = document.getElementById('length').value;
+            const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&()_+";
+            let password = "";
+
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                password += characters.charAt(randomIndex);
+            }
+
+            document.getElementById('password').value = password;
+        }
+    </script>
+     <footer>
+        <p>Developed by Ravy Novais Sales "agente37"</p>
+    </footer>
+</body>
 </html>
