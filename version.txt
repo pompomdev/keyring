@@ -1,0 +1,4 @@
+Version: v1.0.0
+Description: First version of the project.
+Release Date: Jan 19th
+Author: Carlos "pom" Henrique
