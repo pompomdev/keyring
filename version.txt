@@ -1,4 +1,4 @@
-Version: v1.0.0
-Description: First version of the project.
-Release Date: Jan 19th
-Author: Carlos "pom" Henrique
+Version: v1.1.0
+Description: Testing version of the project.
+Release Date: Jan 20th
+Author: Carlos "pom" Henrique & Ravy Novais Sales
